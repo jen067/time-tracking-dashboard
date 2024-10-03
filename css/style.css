@@ -90,11 +90,14 @@ main{
     gap: 1rem;
 }
 
-.status_btn{
+.status_btn,.dotted_btn{
     border: none;
     background: none;
-    color: var(--desaturated-blue);
     cursor: pointer;
+}
+
+.status_btn{
+    color: var(--desaturated-blue);
 }
 
 .status_btn:hover{
@@ -144,8 +147,82 @@ main{
     border-radius: 15px;
     width: 100%;
     height: 100%;
+    cursor: pointer;
+    transition: .7s ease-out;
+}
+
+.card_tag_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card_tag{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.info{
+    margin-top: 2rem;
+}
+
+.hrs{
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.previous{
+    margin-top: 1rem;
+    font-size: .8rem;
+    color: var(--pale-blue);
+}
+
+.card_txt:hover{
+    background-color: #33397A;
 }
 
 .weekly_info,.monthly_info{
     display: none;
+}
+
+@media screen and (max-width:60rem) {
+    main{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7,1fr);
+    }
+
+    .user_info_content{
+        grid-row: 1/2;
+    }
+    .user_info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    .user_img_wrapper{
+        width: 3rem;
+        height: 3rem;
+    }
+    .user_info_wrapper{
+        margin: 0;
+    }
+    .user_name{
+        font-size: 1.2rem;
+    }
+    .status{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .hrs{
+        font-size: 2rem;
+    }
+    .previous{
+        margin: 0;
+    }
 }
